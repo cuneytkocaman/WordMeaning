@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "936014261181",
+    "project_id": "wordmeaning-da6ba",
+    "storage_bucket": "wordmeaning-da6ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936014261181:android:d863c83bbd290d762040d4",
+        "android_client_info": {
+          "package_name": "com.cuneyt.wordmeaning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnoCqiN-yCvUB7z-F014Jb4xPDN6NvUeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

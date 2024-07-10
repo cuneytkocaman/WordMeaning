@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="app1">#152D35</color>
+    <color name="app2">#1B4B56</color>
+    <color name="app3">#3C6C76</color>
+
+    <color name="rv">#EDE4FD</color>
+
+    <color name="fab_bt">#CA4D5D</color>
+    <color name="fab_bt2">#33474e</color>
+
+    <color name="row">#23ffffff</color>
+
+    <color name="title_text">#58F09D</color>
+
+    <color name="alert1">#ED6375</color>
+    <color name="alert2">#CA4D5D</color>
+    <color name="alert3">#A23A47</color>
+
+
+</resources>

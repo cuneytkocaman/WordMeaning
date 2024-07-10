@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WordMeaning</string>
+    <string name="db_word">Word</string>
+    <string name="db_error">Error</string>
+    <string name="db_user">User</string>
+    <string name="db_language_choice">ChoiceLanguage</string>
+    <string name="text_size">13dp</string>
+</resources>
