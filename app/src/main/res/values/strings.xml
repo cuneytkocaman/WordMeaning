@@ -5,4 +5,7 @@
     <string name="db_user">User</string>
     <string name="db_language_choice">ChoiceLanguage</string>
     <string name="text_size">13dp</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

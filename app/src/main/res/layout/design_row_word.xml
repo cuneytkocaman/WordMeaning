@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constRow"
         android:layout_width="0dp"
@@ -13,6 +12,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/bg_row"
         app:layout_constraintEnd_toEndOf="parent"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,7 +38,7 @@
                 android:paddingEnd="5dp"
                 android:paddingBottom="5dp"
                 android:text="Kelime"
-                android:textColor="@color/white"
+                android:textColor="@color/row_word"
                 android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

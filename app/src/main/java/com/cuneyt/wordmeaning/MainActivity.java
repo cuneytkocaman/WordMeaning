@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            show(txtBtLangChoice.getText().toString());
             readLanguage();
             search();
             fabButtonHideinRecyclerView();
@@ -169,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                            String currentUserId = firebaseUser.getUid().toString();
                             String word = editWord.getText().toString();
                             String meaning = editMeaning.getText().toString();
                             String desc = editDescription.getText().toString();
@@ -183,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
                             wordModel = new WordModel(uniqueId, lang, word, meaning, desc);
 
-                            referenceWord.child(uniqueId).setValue(wordModel);
+                            referenceWord.child(currentUserId).child(lang).child(uniqueId).setValue(wordModel);
 
                             dialogAdd.dismiss();
                         }
@@ -265,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioGroupLang = view.findViewById(R.id.radioGroupLang);
         TextView txtBtYes = view.findViewById(R.id.txtBtYes);
         TextView txtBtNo = view.findViewById(R.id.txtBtNo);
+        TextView txtOtherLang = view.findViewById(R.id.txtOtherLang);
 
         builder.setView(view);
 
@@ -286,8 +289,9 @@ public class MainActivity extends AppCompatActivity {
 
                 int radioSelectId = radioGroupLang.getCheckedRadioButtonId();
 
-                if (radioSelectId == -1) {
+                if (radioSelectId == -1 && TextUtils.isEmpty(txtOtherLang.getText().toString())) {
                     Toast.makeText(MainActivity.this, "Dil Seçiniz.", Toast.LENGTH_SHORT).show();
+
                 } else {
                     RadioButton radioButtonLang = radioGroupLang.findViewById(radioSelectId);
 
@@ -310,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
                             HashMap<String, Object> updLanguage = new HashMap<>();
                             updLanguage.put("id", choiceId);
                             updLanguage.put("language", radioLang);
+
 
                             referenceLang.child(currentUserId).child(choiceId).updateChildren(updLanguage);
 
@@ -368,7 +373,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void fabButtonHideinRecyclerView(){
+    public void fabButtonHideinRecyclerView() {
 
         rvWord.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -448,12 +453,40 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void logout(){
+    public void logout() {
+        AlertDialog.Builder builderLogout = new AlertDialog.Builder(MainActivity.this);
+        View viewLogout = getLayoutInflater().inflate(R.layout.alert_log_out, null);
 
-        FirebaseAuth.getInstance().signOut();
+        TextView textBtLogoutYes = viewLogout.findViewById(R.id.textBtLogoutYes);
+        TextView textBtLogoutNo = viewLogout.findViewById(R.id.textBtLogoutNo);
 
-        Intent intentLogout = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intentLogout);
-        finish();
+        builderLogout.setView(viewLogout);
+
+        AlertDialog dialog = builderLogout.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        textBtLogoutYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intentLogout = new Intent(MainActivity.this, LoginActivity.class);
+                intentLogout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentLogout);
+                finish();
+
+                dialog.dismiss();
+            }
+        });
+
+        textBtLogoutNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
+
 }

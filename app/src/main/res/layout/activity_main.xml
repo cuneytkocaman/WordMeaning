@@ -86,6 +86,7 @@
                         android:id="@+id/txtBtLangChoice"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
+                        android:background="?android:attr/selectableItemBackground"
                         android:fontFamily="@font/proza_libre_medium"
                         android:gravity="center"
                         android:text="Dil Seçin"

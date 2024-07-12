@@ -7,7 +7,7 @@
     <color name="app2">#1B4B56</color>
     <color name="app3">#3C6C76</color>
 
-    <color name="rv">#EDE4FD</color>
+    <color name="rv">#F2EAFF</color>
 
     <color name="fab_bt">#CA4D5D</color>
     <color name="fab_bt2">#33474e</color>
@@ -15,10 +15,14 @@
     <color name="row">#23ffffff</color>
 
     <color name="title_text">#58F09D</color>
+    <color name="row_word">#58F0E3</color>
 
-    <color name="alert1">#ED6375</color>
-    <color name="alert2">#CA4D5D</color>
-    <color name="alert3">#A23A47</color>
-
-
+    <color name="alert">#EEE4FF</color>
+    <color name="alert_txt_tint">#83AFB8</color>
+    <color name="alert_txt">#993C48</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>w
 </resources>

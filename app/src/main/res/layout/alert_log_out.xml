@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constAlertDialog"
-        android:layout_width="250dp"
+        android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="@color/alert"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,9 +21,7 @@
             android:layout_height="0dp"
             android:fontFamily="@font/proza_libre_medium"
             android:gravity="center"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:text="İnternet bağlantınızı kontrol edin."
+            android:text="Oturum Kapatılıyor..."
             android:textColor="@color/alert_txt"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,23 +30,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textBtAlertNetYes"
+            android:id="@+id/textBtLogoutYes"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:fontFamily="@font/proza_libre_medium"
-            android:gravity="center"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:text="Tamam"
-            android:textColor="@color/alert_txt"
-            android:textSize="14dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintWidth_percent=".5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:text="Evet"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/alert_txt"
+            android:fontFamily="@font/proza_libre_medium"
+            app:layout_constraintStart_toEndOf="@+id/textBtLogoutNo"
+            app:layout_constraintTop_toBottomOf="@+id/textAlertTitle"
+            app:layout_constraintVertical_bias="0.5"/>
+
+        <TextView
+            android:id="@+id/textBtLogoutNo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:layout_constraintHeight_percent=".5"
+            app:layout_constraintWidth_percent=".5"
+            android:text="Hayır"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/alert_txt"
+            android:fontFamily="@font/proza_libre_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textBtLogoutYes"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textAlertTitle"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.5"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
